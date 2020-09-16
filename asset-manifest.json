@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/msm-admin/static/css/main.5f361e03.chunk.css",
+    "main.js": "/msm-admin/static/js/main.205747bd.chunk.js",
+    "main.js.map": "/msm-admin/static/js/main.205747bd.chunk.js.map",
+    "runtime-main.js": "/msm-admin/static/js/runtime-main.a9fc6623.js",
+    "runtime-main.js.map": "/msm-admin/static/js/runtime-main.a9fc6623.js.map",
+    "static/js/2.1850b1f9.chunk.js": "/msm-admin/static/js/2.1850b1f9.chunk.js",
+    "static/js/2.1850b1f9.chunk.js.map": "/msm-admin/static/js/2.1850b1f9.chunk.js.map",
+    "index.html": "/msm-admin/index.html",
+    "precache-manifest.9d5a876eed810febf49b89bd5ead724f.js": "/msm-admin/precache-manifest.9d5a876eed810febf49b89bd5ead724f.js",
+    "service-worker.js": "/msm-admin/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/msm-admin/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.1850b1f9.chunk.js.LICENSE.txt": "/msm-admin/static/js/2.1850b1f9.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/msm-admin/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a9fc6623.js",
+    "static/js/2.1850b1f9.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.205747bd.chunk.js"
+  ]
+}
