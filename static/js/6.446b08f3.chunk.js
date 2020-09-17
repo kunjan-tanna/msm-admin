@@ -1,2 +1,0 @@
-(this["webpackJsonpmedical-store-management"]=this["webpackJsonpmedical-store-management"]||[]).push([[6],{114:function(e,t,n){"use strict";n.r(t);var a=n(18),r=n(19),c=n(21),u=n(20),s=n(0),i=n.n(s),o=function(e){Object(c.a)(n,e);var t=Object(u.a)(n);function n(){return Object(a.a)(this,n),t.apply(this,arguments)}return Object(r.a)(n,[{key:"render",value:function(){return i.a.createElement("h4",null,"You're AddPurchase.")}}]),n}(i.a.Component);t.default=o}}]);
-//# sourceMappingURL=6.446b08f3.chunk.js.map
