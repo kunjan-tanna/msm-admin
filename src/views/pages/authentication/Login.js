@@ -20,7 +20,7 @@ import { Mail, Lock, Check } from "react-feather";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { history } from "../../../history";
-import fgImg from "../../../assets/imgs/login.png";
+import fgImg from "../../../assets/imgs/MEDICAL-IMAGE.jpg";
 
 class Login extends React.Component {
    constructor(props) {
