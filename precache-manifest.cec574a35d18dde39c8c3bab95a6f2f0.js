@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "10f8f71807e4cdd5e14f8a4d137670b9",
+    "revision": "145d81be08f43e10f45095b8d810da2f",
     "url": "/msm-admin/index.html"
   },
   {
@@ -32,20 +32,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/msm-admin/static/js/1.e9c1e32f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cdf38e0a9278a7cdd82e",
-    "url": "/msm-admin/static/js/10.559b8765.chunk.js"
+    "revision": "d5974cbb91780123a393",
+    "url": "/msm-admin/static/js/10.8b4dbe14.chunk.js"
   },
   {
-    "revision": "fcf266ec23d2a6e44b77",
-    "url": "/msm-admin/static/js/11.de35b770.chunk.js"
+    "revision": "54ada4f521002ccc51ce",
+    "url": "/msm-admin/static/js/11.66469559.chunk.js"
   },
   {
     "revision": "f63bb90d055f5626f19d",
     "url": "/msm-admin/static/js/12.90159de9.chunk.js"
   },
   {
-    "revision": "adebda0ecb9e041cea01",
-    "url": "/msm-admin/static/js/13.fc6e3242.chunk.js"
+    "revision": "48a58fa141d152c7a02b",
+    "url": "/msm-admin/static/js/13.4b2e9a4f.chunk.js"
   },
   {
     "revision": "070d8579533856aafde1",
@@ -64,27 +64,27 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/msm-admin/static/js/6.ea4d2445.chunk.js"
   },
   {
-    "revision": "8fbfcb4c79d124f298da",
-    "url": "/msm-admin/static/js/7.8b97fb03.chunk.js"
+    "revision": "125f0a527640aa1c3cfe",
+    "url": "/msm-admin/static/js/7.7d579136.chunk.js"
   },
   {
-    "revision": "63b562c06e8543aa0aa6",
-    "url": "/msm-admin/static/js/8.69ab2ded.chunk.js"
+    "revision": "9bc83a7a0bf3740e6a38",
+    "url": "/msm-admin/static/js/8.29060a6d.chunk.js"
   },
   {
-    "revision": "0df7d0095e5df0f9e032",
-    "url": "/msm-admin/static/js/9.a056a16a.chunk.js"
+    "revision": "354a70b51150832dce2f",
+    "url": "/msm-admin/static/js/9.b08155a3.chunk.js"
   },
   {
     "revision": "37e0f852110a3befd57a",
     "url": "/msm-admin/static/js/main.9eb318d8.chunk.js"
   },
   {
-    "revision": "2e1608eea1604dab15a5",
-    "url": "/msm-admin/static/js/runtime-main.aae78aaa.js"
+    "revision": "bb831505c50b3a0e4c2f",
+    "url": "/msm-admin/static/js/runtime-main.78292d71.js"
   },
   {
-    "revision": "fd58a052054c690506118c4b7a0f731d",
-    "url": "/msm-admin/static/media/login.fd58a052.png"
+    "revision": "8cc3ad5240aa6ab43ecaac81c2ba9677",
+    "url": "/msm-admin/static/media/MEDICAL-IMAGE.8cc3ad52.jpg"
   }
 ]);
