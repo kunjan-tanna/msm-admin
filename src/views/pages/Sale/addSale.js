@@ -1,8 +1,13 @@
 import React from "react";
-
+import Menu from "../../../navbar/menu";
 class AddSale extends React.Component {
    render() {
-      return <h4>You're AddSale.</h4>;
+      return (
+         <div>
+            <Menu />
+            <h4>You're AddSale.</h4>;
+         </div>
+      );
    }
 }
 

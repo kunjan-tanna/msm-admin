@@ -1,9 +1,8 @@
 import React, { Component, lazy } from "react";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 import { history } from "./history";
-import Menu from "./navbar/menu";
 import { connect } from "react-redux";
-//import PrivateRoute from "./PrivateRoute";
+import PrivateRoute from "./PrivateRoute";
 //import AdminRoute from "./AdminRoute";
 
 //user Dashboard
@@ -20,9 +19,10 @@ const AddSale = lazy(() => import("./views/pages/Sale/addSale"));
 
 // //Home Dashboard
 // import Home from "./views/pages/UserDashboard/Home";
-// //Authentication
-// import Login from "./views/pages/authentication/Login";
-// import Register from "./views/pages/authentication/Register";
+
+//Authentication
+const Login = lazy(() => import("./views/pages/authentication/Login"));
+const Register = lazy(() => import("./views/pages/authentication/Register"));
 // import ForgotPassword from "./views/pages/authentication/ForgotPassword";
 // import ResetPassword from "./views/pages/authentication/ResetPassword";
 
@@ -32,15 +32,35 @@ class Routes extends Component {
       return (
          <div>
             <Router history={history}>
-               <Menu />
                <Switch>
-                  <Route exact path="/" component={UserDashboard} />
-                  <Route exact path="/add/medicine" component={AddMedicine} />
-                  <Route exact path="/add/purchase" component={AddPurchase} />
-                  <Route exact path="/add/sale" component={AddSale} />
-
-                  {/* <Route exact path="/login" component={Login} />
+                  <PrivateRoute
+                     userInfo={this.props.userInfo}
+                     exact
+                     path="/"
+                     component={UserDashboard}
+                  />
+                  <PrivateRoute
+                     userInfo={this.props.userInfo}
+                     exact
+                     path="/add/medicine"
+                     component={AddMedicine}
+                  />
+                  <PrivateRoute
+                     userInfo={this.props.userInfo}
+                     exact
+                     path="/add/purchase"
+                     component={AddPurchase}
+                  />
+                  <PrivateRoute
+                     userInfo={this.props.userInfo}
+                     exact
+                     path="/add/sale"
+                     component={AddSale}
+                  />
+                  <Route path="/login" component={Login} />
                   <Route exact path="/register" component={Register} />
+
+                  {/* 
                   <Route path="/forgotpassword" component={ForgotPassword} />
                   <Route path="/resetpassword" component={ResetPassword} /> */}
 

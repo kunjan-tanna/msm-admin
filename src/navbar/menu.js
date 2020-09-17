@@ -15,6 +15,7 @@ import {
    NavbarText,
 } from "reactstrap";
 import * as Icon from "react-feather";
+import { logout } from "../redux/actions/auth/loginActions";
 import { connect } from "react-redux";
 
 const Menu = (props) => {
@@ -22,6 +23,11 @@ const Menu = (props) => {
 
    const toggle = () => setIsOpen(!isOpen);
 
+   const handleitem = () => {
+      props.logout();
+      // console.log('LOGOUT',props.logout)
+      props.history.push("/login");
+   };
    return (
       <div>
          <Navbar color="light" light expand="md">
@@ -126,7 +132,11 @@ const Menu = (props) => {
                         &nbsp;
                         <span className="align-middle">Edit Profile</span>
                      </DropdownItem>
-                     <DropdownItem tag="a" href="#">
+                     <DropdownItem
+                        // tag={RRNavLink}
+                        // to={`/login`}
+                        onClick={(e) => handleitem(e, "/login")}
+                     >
                         <Icon.Power size={14} className="mr-50" />
                         &nbsp;
                         <span className="align-bottom">logout</span>
@@ -145,4 +155,4 @@ const mapStateToProps = (state) => {
       userInfo: state.auth.login.userInfo,
    };
 };
-export default connect(mapStateToProps)(withRouter(Menu));
+export default connect(mapStateToProps, { logout })(withRouter(Menu));

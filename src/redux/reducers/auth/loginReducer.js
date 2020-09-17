@@ -1,5 +1,4 @@
 const initialState = {
-   userRole: "admin",
    userInfo: "",
    accessToken: "",
 };
@@ -14,9 +13,6 @@ export const login = (state = initialState, action) => {
          });
       case "LOGOUT":
          return initialState;
-
-      case "CHANGE_ROLE":
-         return { userRole: action.userRole };
       default:
          return state;
    }

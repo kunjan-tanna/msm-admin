@@ -1,8 +1,13 @@
 import React from "react";
-
+import Menu from "../../navbar/menu";
 class UserDashboard extends React.Component {
    render() {
-      return <h4>You're Dashboard.</h4>;
+      return (
+         <div>
+            <Menu />
+            <h3> hii </h3>
+         </div>
+      );
    }
 }
 

@@ -1,8 +1,13 @@
 import React from "react";
-
+import Menu from "../../../navbar/menu";
 class AddMedicine extends React.Component {
    render() {
-      return <h4>You're AddMedicine.</h4>;
+      return (
+         <div>
+            <Menu />
+            <h4>You're AddMedicine.</h4>;
+         </div>
+      );
    }
 }
 
