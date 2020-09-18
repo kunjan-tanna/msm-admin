@@ -23,6 +23,7 @@ const AddSale = lazy(() => import("./views/pages/Sale/addSale"));
 //Authentication
 const Login = lazy(() => import("./views/pages/authentication/Login"));
 const Register = lazy(() => import("./views/pages/authentication/Register"));
+const Profile = lazy(() => import("./views/pages/authentication/Profile"));
 // import ForgotPassword from "./views/pages/authentication/ForgotPassword";
 // import ResetPassword from "./views/pages/authentication/ResetPassword";
 
@@ -33,30 +34,42 @@ class Routes extends Component {
          <div>
             <Router history={history}>
                <Switch>
+                  {/* For user Dashboard */}
                   <PrivateRoute
                      userInfo={this.props.userInfo}
                      exact
                      path="/"
                      component={UserDashboard}
                   />
+                  {/* For Medicines */}
                   <PrivateRoute
                      userInfo={this.props.userInfo}
                      exact
                      path="/add/medicine"
                      component={AddMedicine}
                   />
+                  {/* For Purchase */}
                   <PrivateRoute
                      userInfo={this.props.userInfo}
                      exact
                      path="/add/purchase"
                      component={AddPurchase}
                   />
+                  {/* For Sales */}
                   <PrivateRoute
                      userInfo={this.props.userInfo}
                      exact
                      path="/add/sale"
                      component={AddSale}
                   />
+                  {/* For Profile */}
+                  <PrivateRoute
+                     userInfo={this.props.userInfo}
+                     exact
+                     path="/edit/profile"
+                     component={Profile}
+                  />
+                  {/* For Authentications */}
                   <Route path="/login" component={Login} />
                   <Route exact path="/register" component={Register} />
 

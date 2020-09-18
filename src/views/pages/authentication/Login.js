@@ -52,7 +52,7 @@ class Login extends React.Component {
                xl="7"
                lg="10"
                md="8"
-               className="d-flex justify-content-center pt-4"
+               className="d-flex justify-content-center pt-5"
             >
                <Card>
                   <Row className="m-0">

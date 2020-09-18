@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { withRouter, NavLink as RRNavLink } from "react-router-dom";
 import {
    Collapse,
@@ -17,9 +17,12 @@ import {
 import * as Icon from "react-feather";
 import { logout } from "../redux/actions/auth/loginActions";
 import { connect } from "react-redux";
+import * as userAction from "../redux/actions/auth/registerActions";
 
 const Menu = (props) => {
+   console.log("LOGOUT", props);
    const [isOpen, setIsOpen] = useState(false);
+   const [data, setData] = useState({ rowData: [] });
 
    const toggle = () => setIsOpen(!isOpen);
 
@@ -28,6 +31,16 @@ const Menu = (props) => {
       // console.log('LOGOUT',props.logout)
       props.history.push("/login");
    };
+   useEffect(() => {
+      const userId = props.userInfo._id;
+      props.dispatch(userAction.getUserId(userId)).then((res) => {
+         console.log("BY Id", res);
+         if (res) {
+            setData({ rowData: res.data });
+         }
+      });
+   }, []);
+
    return (
       <div>
          <Navbar color="light" light expand="md">
@@ -118,16 +131,31 @@ const Menu = (props) => {
                   >
                      <div className="user-nav d-sm-flex d-none">
                         <span>
-                           Owner of : <strong>ABC Medical</strong>
+                           Owner of :{" "}
+                           <strong>
+                              {data.rowData && data.rowData.ownerOf
+                                 ? data.rowData.ownerOf
+                                 : "loading..."}
+                           </strong>
                         </span>
                         &nbsp;
+                        {console.log("DATTTAAA", data.rowData)}
                         <span>
-                           Username : <strong>John Doe</strong>
+                           Username :{" "}
+                           <strong>
+                              {data.rowData && data.rowData.lastName
+                                 ? data.rowData.lastName
+                                 : "Loading..."}
+                           </strong>
                         </span>
                      </div>
                   </DropdownToggle>
                   <DropdownMenu right>
-                     <DropdownItem tag="a" href="#">
+                     <DropdownItem
+                        tag={RRNavLink}
+                        to={`/edit/profile`}
+                        activeClassName="active"
+                     >
                         <Icon.User size={14} className="mr-50" />
                         &nbsp;
                         <span className="align-middle">Edit Profile</span>
@@ -155,4 +183,7 @@ const mapStateToProps = (state) => {
       userInfo: state.auth.login.userInfo,
    };
 };
-export default connect(mapStateToProps, { logout })(withRouter(Menu));
+const mapDispatchToProps = (dispatch) => {
+   return { logout: () => dispatch(logout()), dispatch };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Menu));
