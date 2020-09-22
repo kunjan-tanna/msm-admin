@@ -61,7 +61,7 @@ const Menu = (props) => {
                      <DropdownToggle nav caret>
                         Medicine
                      </DropdownToggle>
-                     <DropdownMenu left>
+                     <DropdownMenu left="true">
                         <DropdownItem
                            tag={RRNavLink}
                            to={`/add/medicine`}
@@ -75,7 +75,7 @@ const Menu = (props) => {
                      <DropdownToggle nav caret>
                         Transaction
                      </DropdownToggle>
-                     <DropdownMenu left>
+                     <DropdownMenu left="true">
                         <DropdownItem
                            tag={RRNavLink}
                            to={`/add/purchase`}
@@ -96,7 +96,7 @@ const Menu = (props) => {
                      <DropdownToggle nav caret>
                         Search
                      </DropdownToggle>
-                     <DropdownMenu left>
+                     <DropdownMenu left="true">
                         <DropdownItem
                            tag={RRNavLink}
                            to={`/show/sale`}
