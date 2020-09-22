@@ -30,6 +30,13 @@ const CustomHeader = (props) => {
       </div>
    );
 };
+const customStyles = {
+   headCells: {
+      style: {
+         color: "red", // override the row height
+      },
+   },
+};
 class ShowMedicine extends React.Component {
    constructor(props) {
       super(props);
@@ -198,7 +205,11 @@ class ShowMedicine extends React.Component {
 
       this.props.dispatch(globalActions.getMedicine()).then((res) => {
          console.log("get POST----", res);
-         let rowData = res.data;
+         let rowData = res.data.filter((item) => {
+            if (item.userId === this.state.userInfo._id) {
+               return item;
+            }
+         });
          rowData.map((item, index) => {
             //console.log(item,index)
             item.count = index + 1;
@@ -297,6 +308,7 @@ class ShowMedicine extends React.Component {
                         //data={value.length ? filteredData : data}
                         data={this.state.rowData}
                         columns={columns}
+                        customStyles={customStyles}
                         noHeader
                         //pagination
                         subHeader

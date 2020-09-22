@@ -17,6 +17,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import chroma from "chroma-js";
 import Select from "react-select";
+import { history } from "../../../history";
 import { connect } from "react-redux";
 import * as globalActions from "../../../redux/actions/global";
 import * as MedicineActions from "../../../redux/actions/medicines";
@@ -184,9 +185,9 @@ class AddMedicine extends React.Component {
                toast.success("Add Medicine Successfully", {
                   position: toast.POSITION.BOTTOM_RIGHT,
                });
-               //  setTimeout(() => {
-               //    history.push("/cold-lead");
-               //  }, 3000);
+               setTimeout(() => {
+                  history.push("/show/medicine");
+               }, 3000);
             } else {
                toast.error("Add Medicine not Successfully", {
                   position: toast.POSITION.BOTTOM_RIGHT,
