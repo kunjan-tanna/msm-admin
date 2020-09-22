@@ -30,6 +30,7 @@ class AddMedicine extends React.Component {
          packages: this.props.packages,
          racks: this.props.racks,
          packgeTypes: this.props.packageType,
+         userdata: this.props.userInfo,
          result: "",
          SubItem: "",
          totalQuantity: "",
@@ -175,6 +176,7 @@ class AddMedicine extends React.Component {
       obj.subItemUnitCost = this.state.SubItem;
       obj.totalNoOfItem = this.state.itemInPack;
       obj.totalNoOfQuantity = this.state.totalQuantity;
+      obj.userId = this.state.userdata._id;
 
       console.log("FORMSAATATA", obj);
       this.props
@@ -212,8 +214,8 @@ class AddMedicine extends React.Component {
                         <h4 className="mb-0">Add Medicine</h4>
                      </CardTitle>
                      <CardBody
-                        body
-                        inverse
+                        body="true"
+                        inverse="true"
                         style={{
                            backgroundColor: "#7EBDE4",
                            borderColor: "#7EBDE4",
@@ -582,6 +584,7 @@ const mapStateToProps = (state) => {
       packages: state.global.packages,
       racks: state.global.racks,
       packageTypes: state.global.packageTypes,
+      userInfo: state.auth.login.userInfo,
    };
 };
 export default connect(mapStateToProps)(AddMedicine);

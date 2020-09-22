@@ -205,6 +205,7 @@ class ShowMedicine extends React.Component {
 
       this.props.dispatch(globalActions.getMedicine()).then((res) => {
          console.log("get POST----", res);
+
          let rowData = res.data.filter((item) => {
             if (item.userId === this.state.userInfo._id) {
                return item;
@@ -313,7 +314,10 @@ class ShowMedicine extends React.Component {
                         //pagination
                         subHeader
                         // subHeaderComponent={
-                        //   <CustomHeader value={value} handleFilter={this.handleFilter} />
+                        //    <CustomHeader
+                        //       value={value}
+                        //       handleFilter={this.handleFilter}
+                        //    />
                         // }
                      />
                   </CardBody>
