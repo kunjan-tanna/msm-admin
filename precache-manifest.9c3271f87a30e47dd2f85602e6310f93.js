@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "57e844dd007b736fbbdc42629bfec74d",
+    "revision": "f8692e637f502c54e619d4bd5f81b27f",
     "url": "/msm-admin/index.html"
   },
   {
@@ -32,12 +32,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/msm-admin/static/js/1.a61f5e3f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "69e4df25740982273982",
-    "url": "/msm-admin/static/js/10.bd98b48f.chunk.js"
+    "revision": "221a1a8ddc597d670c35",
+    "url": "/msm-admin/static/js/10.d08e2d51.chunk.js"
   },
   {
-    "revision": "61944d0a8d0bff434a19",
-    "url": "/msm-admin/static/js/11.541c8140.chunk.js"
+    "revision": "04109b30e5aa3325a36a",
+    "url": "/msm-admin/static/js/11.b4b2c001.chunk.js"
   },
   {
     "revision": "558431cd3bb2a9468eb6",
@@ -100,8 +100,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/msm-admin/static/js/main.7271b049.chunk.js"
   },
   {
-    "revision": "d57d32907f7880a35a47",
-    "url": "/msm-admin/static/js/runtime-main.e78e49ab.js"
+    "revision": "dc6e117a59a6d3803000",
+    "url": "/msm-admin/static/js/runtime-main.169dab0e.js"
   },
   {
     "revision": "8cc3ad5240aa6ab43ecaac81c2ba9677",
