@@ -8,16 +8,16 @@ export const addMedicine = (data) => async (dispatch) => {
    return res;
 };
 
-// //Get Category
-// export const getCategory = () => async (dispatch) => {
-//   const res = await axios.get("/category");
-//   // console.log('Get Leads',res)
-//   if (res) {
-//     dispatch({ type: "CATEGORY", payload: res.data });
-//   }
-//   // console.log('Response',res)
-//   return res;
-// };
+//Get Medicine
+export const getMedicine = () => async (dispatch) => {
+   const res = await axios.get("/medicine");
+   // console.log('Get Leads',res)
+   if (res) {
+      dispatch({ type: "GET_MEDICINE", payload: res.data });
+   }
+   // console.log('Response',res)
+   return res;
+};
 // //Get Category By ID
 // export const getCategoryById = (id) => async (dispatch) => {
 //   //console.log("LEADContact ID1",id)

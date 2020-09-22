@@ -210,7 +210,14 @@ class AddMedicine extends React.Component {
                      <CardTitle>
                         <h4 className="mb-0">Add Medicine</h4>
                      </CardTitle>
-                     <CardBody>
+                     <CardBody
+                        body
+                        inverse
+                        style={{
+                           backgroundColor: "#7EBDE4",
+                           borderColor: "#7EBDE4",
+                        }}
+                     >
                         <Form
                            onSubmit={(e) => {
                               e.preventDefault();

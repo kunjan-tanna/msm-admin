@@ -1,13 +1,23 @@
 import React from "react";
-import { Card, CardBody, CardHeader, CardTitle, Input } from "reactstrap";
-
+import {
+   Card,
+   CardBody,
+   CardText,
+   CardHeader,
+   CardTitle,
+   Input,
+   Row,
+   Col,
+} from "reactstrap";
+import Menu from "../../../navbar/menu";
 import DataTable from "react-data-table-component";
 import { Star, Edit, Trash2, Search, Plus } from "react-feather";
-//import * as globalActions from "../../redux/actions/posts/index";
+import * as globalActions from "../../../redux/actions/medicines/index";
 import { connect } from "react-redux";
 import moment from "moment";
 //import { history } from "../../history";
 import { toast } from "react-toastify";
+import * as userAction from "../../../redux/actions/auth/registerActions";
 import "react-toastify/dist/ReactToastify.css";
 
 const CustomHeader = (props) => {
@@ -25,23 +35,88 @@ class ShowMedicine extends React.Component {
       super(props);
       this.state = {
          rowData: [],
+         userInfo: [],
+         userdata: this.props.userInfo,
          count: 0,
 
          columns: [
             {
                name: "Number",
                selector: "count",
-               maxWidth: "150px",
+               maxWidth: "10px",
             },
             {
-               name: "Title",
-               selector: "title",
+               name: "Product Name",
+               selector: "productName",
+               sortable: true,
+               maxWidth: "250px",
+            },
+            {
+               name: "Category",
+               selector: "categoryId.categotyName",
+               sortable: true,
+               maxWidth: "200px",
+               cell: (rowData) => {
+                  return rowData && rowData.categoryId
+                     ? rowData.categoryId.categotyName
+                     : "";
+               },
+            },
+            {
+               name: "Quantity",
+               selector: "quantity",
                sortable: true,
                maxWidth: "200px",
             },
             {
-               name: "Description",
-               selector: "description",
+               name: "Unit",
+               selector: "packageId.packageName",
+               sortable: true,
+               maxWidth: "200px",
+               cell: (rowData) => {
+                  return rowData && rowData.packageId
+                     ? rowData.packageId.packageName
+                     : "";
+               },
+            },
+            {
+               name: "Items",
+               selector: "totalNoOfItem",
+               sortable: true,
+               maxWidth: "200px",
+            },
+            {
+               name: "Unit",
+               selector: "packageTypeId.packageTypeName",
+               sortable: true,
+               maxWidth: "200px",
+               cell: (rowData) => {
+                  return rowData && rowData.packageTypeId
+                     ? rowData.packageTypeId.packageTypeName
+                     : "";
+               },
+            },
+            {
+               name: "SubItems",
+               selector: "totalNoOfQuantity",
+               sortable: true,
+               maxWidth: "200px",
+            },
+            {
+               name: "MRP Rate",
+               selector: "MRPRate",
+               sortable: true,
+               maxWidth: "200px",
+            },
+            {
+               name: "Purchase Rate",
+               selector: "purchaseRate",
+               sortable: true,
+               maxWidth: "200px",
+            },
+            {
+               name: "Sale Rate",
+               selector: "saleRate",
                sortable: true,
                maxWidth: "200px",
             },
@@ -68,29 +143,29 @@ class ShowMedicine extends React.Component {
                      : "";
                },
             },
-            {
-               name: "Edit",
-               selector: "transactions",
-               sortable: true,
-               maxWidth: "200px",
-               cell: (rowData) => {
-                  return (
-                     <div className="actions cursor-pointer">
-                        <Edit
-                           className="mr-50"
-                           size={15}
-                           //   onClick={() =>
-                           //     history.push({
-                           //       pathname: "/edit/post",
-                           //       state: { postId: rowData ? rowData._id : "" },
-                           //     })
-                           //   }
-                        />
-                        {/* {console.log('---lead ID',rowData)} */}
-                     </div>
-                  );
-               },
-            },
+            // {
+            //    name: "Edit",
+            //    selector: "transactions",
+            //    sortable: true,
+            //    maxWidth: "200px",
+            //    cell: (rowData) => {
+            //       return (
+            //          <div className="actions cursor-pointer">
+            //             <Edit
+            //                className="mr-50"
+            //                size={15}
+            //                //   onClick={() =>
+            //                //     history.push({
+            //                //       pathname: "/edit/post",
+            //                //       state: { postId: rowData ? rowData._id : "" },
+            //                //     })
+            //                //   }
+            //             />
+            //             {/* {console.log('---lead ID',rowData)} */}
+            //          </div>
+            //       );
+            //    },
+            // },
             // {
             //   name: "Delete",
             //   selector: "transactions",
@@ -115,16 +190,21 @@ class ShowMedicine extends React.Component {
       };
    }
    async componentDidMount() {
-      // console.log('props',this.props)
-      // this.props.dispatch(globalActions.getPost()).then((res) => {
-      //   // console.log('get POST----',res)
-      //   let rowData = res.data;
-      //   rowData.map((item, index) => {
-      //     //console.log(item,index)
-      //     item.count = index + 1;
-      //   });
-      //   this.setState({ rowData });
-      // });
+      this.props
+         .dispatch(userAction.getUserId(this.state.userdata._id))
+         .then((res) => {
+            this.setState({ userInfo: res.data });
+         });
+
+      this.props.dispatch(globalActions.getMedicine()).then((res) => {
+         console.log("get POST----", res);
+         let rowData = res.data;
+         rowData.map((item, index) => {
+            //console.log(item,index)
+            item.count = index + 1;
+         });
+         this.setState({ rowData });
+      });
    }
    // //delete data
    // onChange=(id)=>{
@@ -165,40 +245,75 @@ class ShowMedicine extends React.Component {
       }
    };
    render() {
-      let { columns, value, filteredData } = this.state;
+      let { columns, userInfo } = this.state;
       return (
-         <Card>
-            <CardHeader>
-               <CardTitle>Stock Report- All Products</CardTitle>
-               {/* <div className="d-flex flex-wrap flot-right">
-            <Button.Ripple
-              color="primary"
-              outline
-              onClick={() => this.props.history.push("/add/post")}
-            >
-              Add Post
-            </Button.Ripple>
-          </div> */}
-            </CardHeader>
-            <CardBody className="rdt_Wrapper">
-               <DataTable
-                  className="dataTable-custom"
-                  //data={value.length ? filteredData : data}
-                  data={this.state.rowData}
-                  columns={columns}
-                  noHeader
-                  //pagination
-                  subHeader
-                  // subHeaderComponent={
-                  //   <CustomHeader value={value} handleFilter={this.handleFilter} />
-                  // }
-               />
-            </CardBody>
-         </Card>
+         <Row>
+            <Col sm="12">
+               <Menu />
+               <Card
+                  body
+                  inverse
+                  style={{ backgroundColor: "#333", borderColor: "#333" }}
+               >
+                  <Row>
+                     <Col sm="12">
+                        <div className="d-flex justify-content-center">
+                           <h2>
+                              {userInfo && userInfo.ownerOf
+                                 ? userInfo.ownerOf
+                                 : "Please Wait....."}
+                           </h2>
+                        </div>
+                     </Col>
+                     <Col sm="12">
+                        <div className="d-flex justify-content-center">
+                           <CardText className="text-muted">
+                              {userInfo && userInfo.address
+                                 ? userInfo.address
+                                 : "Please Wait....."}
+                           </CardText>
+                        </div>
+                     </Col>
+                  </Row>
+               </Card>
+               <Card>
+                  <CardHeader>
+                     <CardTitle>
+                        <strong>Stock Report- All Products</strong>
+                     </CardTitle>
+                     {/* <div className="d-flex flex-wrap flot-right">
+           <Button.Ripple
+             color="primary"
+             outline
+             onClick={() => this.props.history.push("/add/post")}
+           >
+             Add Post
+           </Button.Ripple>
+         </div> */}
+                  </CardHeader>
+                  <CardBody className="rdt_Wrapper">
+                     <DataTable
+                        className="dataTable-custom"
+                        //data={value.length ? filteredData : data}
+                        data={this.state.rowData}
+                        columns={columns}
+                        noHeader
+                        //pagination
+                        subHeader
+                        // subHeaderComponent={
+                        //   <CustomHeader value={value} handleFilter={this.handleFilter} />
+                        // }
+                     />
+                  </CardBody>
+               </Card>
+            </Col>
+         </Row>
       );
    }
 }
 const mapStateToProps = (state) => {
-   return {};
+   return {
+      userInfo: state.auth.login.userInfo,
+   };
 };
 export default connect(mapStateToProps)(ShowMedicine);
