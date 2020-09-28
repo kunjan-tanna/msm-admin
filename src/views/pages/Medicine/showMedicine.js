@@ -311,8 +311,8 @@ class ShowMedicine extends React.Component {
                         columns={columns}
                         customStyles={customStyles}
                         noHeader
-                        //pagination
-                        subHeader
+                        fixedHeader
+                        fixedHeaderScrollHeight="300px"
                         // subHeaderComponent={
                         //    <CustomHeader
                         //       value={value}

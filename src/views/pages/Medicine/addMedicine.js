@@ -35,6 +35,7 @@ class AddMedicine extends React.Component {
          SubItem: "",
          totalQuantity: "",
          itemInPack: "",
+         totalStock: "",
          formData: {},
       };
    }
@@ -144,13 +145,13 @@ class AddMedicine extends React.Component {
          }),
          () => {
             const ItemInPack =
-               this.state.formData.noOfItemPack *
-               this.state.formData.noOfSubItemPack;
+               this.state.formData.noOfItemPack * this.state.formData.quantity;
             console.log("itempack", ItemInPack);
             this.setState({
                itemInPack: ItemInPack,
             });
-            const TotalQuantity = this.state.formData.quantity * ItemInPack;
+            const TotalQuantity =
+               ItemInPack * this.state.formData.noOfSubItemPack;
             this.setState({
                totalQuantity: TotalQuantity,
             });

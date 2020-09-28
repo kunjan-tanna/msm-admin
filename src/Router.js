@@ -12,6 +12,10 @@ const UserDashboard = lazy(() => import("./views/pages/UserDashboard"));
 const AddMedicine = lazy(() => import("./views/pages/Medicine/addMedicine"));
 //Show Medicine
 const ShowMedicine = lazy(() => import("./views/pages/Medicine/showMedicine"));
+//Update Medicine
+const UpdateMedicine = lazy(() =>
+   import("./views/pages/Purchase/UpdateMedicine")
+);
 
 //Add Purchase
 const AddPurchase = lazy(() => import("./views/pages/Purchase/addPurchase"));
@@ -55,6 +59,12 @@ class Routes extends Component {
                      exact
                      path="/show/medicine"
                      component={ShowMedicine}
+                  />
+                  <PrivateRoute
+                     userInfo={this.props.userInfo}
+                     exact
+                     path="/update/medicine"
+                     component={UpdateMedicine}
                   />
                   {/* For Purchase */}
                   <PrivateRoute

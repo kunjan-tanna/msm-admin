@@ -18,24 +18,27 @@ export const getMedicine = () => async (dispatch) => {
    // console.log('Response',res)
    return res;
 };
-// //Get Category By ID
-// export const getCategoryById = (id) => async (dispatch) => {
-//   //console.log("LEADContact ID1",id)
-//   const res = await axios.get(`/get/category/${id}`);
-//   // console.log("--RES",res)
-//   return res;
-// };
-// //Update Category
-// export const updateCategory = (id, data) => async (dispatch) => {
-//   // console.log("ADD LEAD",data)
-//   let obj = {
-//     categoryId: data._id,
-//     categoryName: data.categoryName,
-//   };
-//   const res = await axios.put(`edit/category/${id}`, obj);
-//   // console.log('Res',res)
-//   return res;
-// };
+//Get Category By ID
+export const getMedicineById = (id) => async (dispatch) => {
+   //console.log("LEADContact ID1",id)
+   const res = await axios.get(`/get/medicine/${id}`);
+   // console.log("--RES",res)
+   return res;
+};
+//Update Medicine
+export const updateMedicine = (id, data) => async (dispatch) => {
+   // console.log("ADD LEAD",data)
+   let obj = {
+      medicineId: data._id,
+      quantity: data.quantity,
+      totalNoOfItem: data.totalNoOfItem,
+      totalNoOfQuantity: data.totalNoOfQuantity,
+   };
+   console.log("DATA", obj);
+   const res = await axios.put(`edit/medicine/${id}`, obj);
+   // console.log('Res',res)
+   return res;
+};
 // //Delete the Category
 // export const deleteCategory = (id) => async (dispatch) => {
 //   // console.log('DELCONTACT ID',id)

@@ -35,3 +35,21 @@ export const getRack = () => async (dispatch) => {
    }
    return res;
 };
+//get Companies
+export const getCompanies = () => async (dispatch) => {
+   const res = await axios.get("/companies");
+   if (res) {
+      dispatch({ type: "COMPANIES", payload: res.data });
+   }
+   // console.log(res)
+   return res;
+};
+//get payments
+export const getPayments = () => async (dispatch) => {
+   const res = await axios.get("/payment");
+   if (res) {
+      dispatch({ type: "PAYMENTS", payload: res.data });
+   }
+   // console.log(res)
+   return res;
+};
