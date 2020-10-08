@@ -41,7 +41,6 @@ class Login extends React.Component {
    };
    //Handle Form Submit
    handleFormSubmit = () => {
-      console.log("FORMDATA===", this.state.formData);
       this.props.dispatch(loginWithJWT(this.state.formData));
    };
    render() {

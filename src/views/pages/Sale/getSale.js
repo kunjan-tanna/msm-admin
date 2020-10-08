@@ -86,7 +86,7 @@ class GetSale extends React.Component {
                   let abc =
                      rowData.paymentDetails &&
                      rowData.paymentDetails.map((i) => i.paymentBy);
-                  console.log("abc", abc);
+
                   return rowData && abc ? abc : "";
                },
             },

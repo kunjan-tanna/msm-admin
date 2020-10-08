@@ -42,7 +42,7 @@ const Profile = lazy(() => import("./views/pages/authentication/Profile"));
 
 class Routes extends Component {
    render() {
-      console.log("Routes", this.props);
+      // console.log("Routes", this.props);
       return (
          <div>
             <Router history={history}>

@@ -48,10 +48,3 @@ export const updateMedicine = (id, data) => async (dispatch) => {
    // console.log('Res',res)
    return res;
 };
-// //Delete the Category
-// export const deleteCategory = (id) => async (dispatch) => {
-//   // console.log('DELCONTACT ID',id)
-//   const res = await axios.delete(`/delete/category/${id}`);
-//   // console.log('RESPONSE',res)
-//   return res;
-// };

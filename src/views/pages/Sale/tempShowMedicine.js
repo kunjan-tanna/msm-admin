@@ -157,7 +157,6 @@ class TempShowMedicine extends React.Component {
    }
 
    async componentWillReceiveProps(nextProps) {
-      console.log("--this.props.--", nextProps);
       let rowData = nextProps.tempData;
       rowData.map((item, index) => {
          //console.log(item,index)

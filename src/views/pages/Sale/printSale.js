@@ -42,9 +42,9 @@ class PrintSale extends React.Component {
          .then((res) => {
             this.setState({ userInfo: res.data });
          });
-      // setTimeout(() => {
-      //    window.print();
-      // }, 4000);
+      setTimeout(() => {
+         window.print();
+      }, 4000);
       this.props.dispatch(saleActions.getSaleById(saleId)).then((res) => {
          // console.log("get Salee dataaa----", res.data);
 

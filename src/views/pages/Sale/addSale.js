@@ -141,7 +141,6 @@ class AddSale extends React.Component {
    handleChange = (name, data) => {
       const custs = data && data.map((item) => item.value);
       //const customer = data && data.map((item) => item.value);
-      console.log("DATAAAAA", data);
 
       //const abc = name & name.map(index => index+1)
       this.setState((prevState) => ({

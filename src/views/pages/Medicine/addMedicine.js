@@ -146,7 +146,7 @@ class AddMedicine extends React.Component {
          () => {
             const ItemInPack =
                this.state.formData.noOfItemPack * this.state.formData.quantity;
-            console.log("itempack", ItemInPack);
+
             this.setState({
                itemInPack: ItemInPack,
             });
@@ -159,15 +159,12 @@ class AddMedicine extends React.Component {
       );
    };
    handleChange = (name, data) => {
-      this.setState(
-         (prevState) => ({
-            formData: {
-               ...prevState.formData,
-               [name]: data.value,
-            },
-         }),
-         () => console.log("dattattaa", data)
-      );
+      this.setState((prevState) => ({
+         formData: {
+            ...prevState.formData,
+            [name]: data.value,
+         },
+      }));
       // ()=>console.log('---setState---',this.state.formData,name,data)
    };
 
@@ -179,11 +176,9 @@ class AddMedicine extends React.Component {
       obj.totalNoOfQuantity = this.state.totalQuantity;
       obj.userId = this.state.userdata._id;
 
-      console.log("FORMSAATATA", obj);
       this.props
          .dispatch(MedicineActions.addMedicine(obj))
          .then((res) => {
-            console.log("Medicine Data", res);
             if (res.data && res.data.client) {
                toast.success("Add Medicine Successfully", {
                   position: toast.POSITION.BOTTOM_RIGHT,

@@ -27,20 +27,16 @@ class Register extends React.Component {
          counter: 0,
          formData: {},
       };
-      console.log("PROPSSS", this.props);
    }
    //handle the Input
    handleInput = (event) => {
       event.persist();
-      this.setState(
-         (prevState) => ({
-            formData: {
-               ...prevState.formData,
-               [event.target.name]: event.target.value,
-            },
-         }),
-         () => console.log(this.state.formData)
-      );
+      this.setState((prevState) => ({
+         formData: {
+            ...prevState.formData,
+            [event.target.name]: event.target.value,
+         },
+      }));
    };
 
    //To submit the Data
@@ -48,7 +44,6 @@ class Register extends React.Component {
       this.props
          .dispatch(RegUsers(this.state.formData))
          .then((res) => {
-            console.log("REGISTER DATAA", res);
             if (!res.data) {
                //Add success message in Toast
                // console.log("ERROR");

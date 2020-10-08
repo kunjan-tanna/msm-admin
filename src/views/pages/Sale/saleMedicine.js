@@ -216,7 +216,6 @@ class SaleMedicine extends React.Component {
                            return item;
                         }
                      });
-                     console.log("ressssponseee", data);
                   });
             }
          });

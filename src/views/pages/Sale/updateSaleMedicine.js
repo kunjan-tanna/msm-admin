@@ -58,13 +58,14 @@ class UpdateSaleMedicine extends React.Component {
             },
 
             {
-               name: "Unit",
-               selector: "packageId.packageName",
+               name: "MFG.Date",
+               selector: "manufecturingDate",
                sortable: true,
                maxWidth: "200px",
                cell: (rowData) => {
-                  return rowData && rowData.packageId
-                     ? rowData.packageId.packageName
+                  return rowData &&
+                     moment(rowData.manufecturingDate).format("DD-MMM-YY")
+                     ? moment(rowData.manufecturingDate).format("DD-MMM-YY")
                      : "";
                },
             },
@@ -95,7 +96,7 @@ class UpdateSaleMedicine extends React.Component {
    }
    async componentWillReceiveProps(nextProps) {
       let rowData = nextProps.medicineData;
-      //   console.log("--this.--", rowData);
+      // console.log("--this.--", rowData);
       rowData.map((item, index) => {
          //console.log(item,index)
          item.count = index + 1;
@@ -120,7 +121,7 @@ class UpdateSaleMedicine extends React.Component {
    handleFilter = (e) => {
       let value = e.target.value;
       let data = this.state.rowData;
-      console.log("abc", data);
+
       let filteredData = this.state.filteredData;
       this.setState({ value });
 
@@ -142,7 +143,6 @@ class UpdateSaleMedicine extends React.Component {
       }
    };
    render() {
-      console.log("rowdata", this.state.rowData);
       let { columns, userInfo } = this.state;
       return (
          <Row>

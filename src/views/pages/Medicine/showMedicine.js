@@ -204,8 +204,6 @@ class ShowMedicine extends React.Component {
          });
 
       this.props.dispatch(globalActions.getMedicine()).then((res) => {
-         console.log("get POST----", res);
-
          let rowData = res.data.filter((item) => {
             if (item.userId === this.state.userInfo._id) {
                return item;
@@ -235,7 +233,7 @@ class ShowMedicine extends React.Component {
    handleFilter = (e) => {
       let value = e.target.value;
       let data = this.state.rowData;
-      console.log("abc", data);
+
       let filteredData = this.state.filteredData;
       this.setState({ value });
 

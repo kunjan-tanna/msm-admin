@@ -30,26 +30,21 @@ class Profile extends React.Component {
 
          userData: this.props.userInfo,
       };
-      console.log("PROPSSS---", this.props);
    }
    //handle the Input
    handleInput = (event) => {
       event.persist();
-      this.setState(
-         (prevState) => ({
-            formData: {
-               ...prevState.formData,
-               [event.target.name]: event.target.value,
-            },
-         }),
-         () => console.log(this.state.userData._id)
-      );
+      this.setState((prevState) => ({
+         formData: {
+            ...prevState.formData,
+            [event.target.name]: event.target.value,
+         },
+      }));
    };
 
    componentDidMount() {
       const userId = this.state.userData._id;
       this.props.dispatch(userAction.getUserId(userId)).then((res) => {
-         console.log("BY Id", res);
          if (res) {
             this.setState({ formData: res.data }); //() => {console.log();}
          }
@@ -62,7 +57,6 @@ class Profile extends React.Component {
       this.props
          .dispatch(userAction.UpdateUsers(userId, this.state.formData))
          .then((res) => {
-            console.log("Update DATAA", res);
             if (!res.data) {
                //Add success message in Toast
                // console.log("ERROR");
@@ -91,7 +85,7 @@ class Profile extends React.Component {
    };
    render() {
       const { formData } = this.state;
-      console.log("ROWDATA", formData);
+
       return (
          <Row className="m-0">
             <Col sm="12" className="pt-2">

@@ -37,7 +37,7 @@ export const UpdateUsers = (id, data) => async (dispatch) => {
       mobile: data.mobile,
       status: data.status,
    };
-   console.log("ADD USER", data);
+
    const res = await axios.put(`/edit/users/${id}`, obj);
    // console.log("ADD USER=======",res)
    return res;

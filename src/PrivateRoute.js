@@ -6,7 +6,7 @@ const PrivateRoute = ({ component: Component, userInfo, ...rest }) => {
       <Route
          {...rest}
          render={(props) => {
-            console.log("Propssssssssss", userInfo);
+            // console.log("Propssssssssss", userInfo);
             if (userInfo) {
                return <Component {...props} />;
             } else {

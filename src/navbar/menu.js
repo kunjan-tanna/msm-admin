@@ -20,7 +20,6 @@ import { connect } from "react-redux";
 import * as userAction from "../redux/actions/auth/registerActions";
 
 const Menu = (props) => {
-   console.log("LOGOUT", props);
    const [isOpen, setIsOpen] = useState(false);
    const [data, setData] = useState({ rowData: [] });
 
@@ -34,7 +33,6 @@ const Menu = (props) => {
    useEffect(() => {
       const userId = props.userInfo._id;
       props.dispatch(userAction.getUserId(userId)).then((res) => {
-         console.log("BY Id", res);
          if (res) {
             setData({ rowData: res.data });
          }
@@ -141,7 +139,6 @@ const Menu = (props) => {
                            </strong>
                         </span>
                         &nbsp;
-                        {console.log("DATTTAAA", data.rowData)}
                         <span>
                            Username :{" "}
                            <strong>
