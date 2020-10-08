@@ -133,9 +133,11 @@ const Menu = (props) => {
                         <span>
                            Owner of :{" "}
                            <strong>
-                              {data.rowData && data.rowData.ownerOf
-                                 ? data.rowData.ownerOf
-                                 : "loading..."}
+                              <i>
+                                 {data.rowData && data.rowData.ownerOf
+                                    ? data.rowData.ownerOf
+                                    : "loading..."}
+                              </i>
                            </strong>
                         </span>
                         &nbsp;

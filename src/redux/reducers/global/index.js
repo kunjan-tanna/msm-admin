@@ -6,6 +6,9 @@ const initialState = {
    medicine: [],
    companies: [],
    payments: [],
+   customers: [],
+   sales: [],
+   addsale: [],
 };
 
 //To Store the Actions
@@ -25,6 +28,12 @@ const global = (state = initialState, action) => {
          return Object.assign({}, state, { payments: action.payload });
       case "GET_MEDICINE":
          return Object.assign({}, state, { medicine: action.payload });
+      case "GET_SALE":
+         return Object.assign({}, state, { sales: action.payload });
+      case "CUSTOMERS":
+         return Object.assign({}, state, { customers: action.payload });
+      case "ADD_SALE":
+         return Object.assign({}, state, { addsale: action.payload });
       default:
          return state;
    }

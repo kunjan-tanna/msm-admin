@@ -53,3 +53,12 @@ export const getPayments = () => async (dispatch) => {
    // console.log(res)
    return res;
 };
+//get customers
+export const getCustomers = () => async (dispatch) => {
+   const res = await axios.get("/customer");
+   if (res) {
+      dispatch({ type: "CUSTOMERS", payload: res.data });
+   }
+   // console.log(res)
+   return res;
+};

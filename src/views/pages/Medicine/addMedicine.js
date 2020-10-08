@@ -204,6 +204,9 @@ class AddMedicine extends React.Component {
             });
          });
    };
+   handleReset = () => {
+      this.setState({ formData: {} });
+   };
    render() {
       return (
          <Row>
@@ -232,20 +235,30 @@ class AddMedicine extends React.Component {
                               <Row>
                                  <Col md="4" sm="12">
                                     <FormGroup>
-                                       <Label for="name">Product Name</Label>
+                                       <Label for="name">
+                                          Product Name &nbsp;
+                                          <strong className="text-danger">
+                                             *
+                                          </strong>
+                                       </Label>
                                        <Input
                                           type="text"
                                           id="productName"
                                           name="productName"
                                           placeholder="Product Name"
-                                          //required
+                                          required
                                           onChange={this.handleInput}
                                        />
                                     </FormGroup>
                                  </Col>
                                  <Col md="4" sm="12">
                                     <FormGroup>
-                                       <Label for="name">Category Name</Label>
+                                       <Label for="name">
+                                          Category Name &nbsp;
+                                          <strong className="text-danger">
+                                             *
+                                          </strong>
+                                       </Label>
                                        <Select
                                           isClearable={false}
                                           //styles={colourStyles}
@@ -266,7 +279,12 @@ class AddMedicine extends React.Component {
                                  </Col>
                                  <Col md="4" sm="12">
                                     <FormGroup>
-                                       <Label for="name">Package Name</Label>
+                                       <Label for="name">
+                                          Package Name &nbsp;
+                                          <strong className="text-danger">
+                                             *
+                                          </strong>
+                                       </Label>
                                        <Select
                                           isClearable={false}
                                           //styles={colourStyles}
@@ -287,9 +305,14 @@ class AddMedicine extends React.Component {
                                  </Col>
                                  <Col md="4" sm="12">
                                     <FormGroup>
-                                       <Label for="number">Purchase Rate</Label>
+                                       <Label for="number">
+                                          Purchase Rate &nbsp;
+                                          <strong className="text-danger">
+                                             *
+                                          </strong>
+                                       </Label>
                                        <Input
-                                          //required
+                                          required
                                           type="number"
                                           id="purchaseRate"
                                           placeholder="Purchase Rate"
@@ -300,7 +323,12 @@ class AddMedicine extends React.Component {
                                  </Col>
                                  <Col md="4" sm="12">
                                     <FormGroup>
-                                       <Label for="number">MRP Rate</Label>
+                                       <Label for="number">
+                                          MRP Rate &nbsp;
+                                          <strong className="text-danger">
+                                             *
+                                          </strong>
+                                       </Label>
                                        <Input
                                           required
                                           type="number"
@@ -313,9 +341,14 @@ class AddMedicine extends React.Component {
                                  </Col>
                                  <Col md="4" sm="12">
                                     <FormGroup>
-                                       <Label for="number">Sale Rate</Label>
+                                       <Label for="number">
+                                          Sale Rate &nbsp;
+                                          <strong className="text-danger">
+                                             *
+                                          </strong>
+                                       </Label>
                                        <Input
-                                          //required
+                                          required
                                           type="number"
                                           id="saleRate"
                                           placeholder="Sale Rate"
@@ -327,7 +360,10 @@ class AddMedicine extends React.Component {
                                  <Col md="3" sm="12">
                                     <FormGroup>
                                        <Label for="number">
-                                          No.of Item Pack
+                                          No.of Item Pack &nbsp;
+                                          <strong className="text-danger">
+                                             *
+                                          </strong>
                                        </Label>
                                        <Input
                                           required
@@ -382,7 +418,10 @@ class AddMedicine extends React.Component {
                                  <Col md="3" sm="12">
                                     <FormGroup>
                                        <Label for="number">
-                                          No.of SubItem Pack
+                                          No.of SubItem Pack &nbsp;
+                                          <strong className="text-danger">
+                                             *
+                                          </strong>
                                        </Label>
                                        <Input
                                           required
@@ -418,10 +457,13 @@ class AddMedicine extends React.Component {
                                  <Col md="3" sm="12">
                                     <FormGroup>
                                        <Label for="number">
-                                          Manufecturing Date
+                                          Manufecturing Date &nbsp;
+                                          <strong className="text-danger">
+                                             *
+                                          </strong>
                                        </Label>
                                        <Input
-                                          //required
+                                          required
                                           type="date"
                                           id="manufecturingDate"
                                           placeholder="Manufecturing Date"
@@ -432,9 +474,14 @@ class AddMedicine extends React.Component {
                                  </Col>
                                  <Col md="3" sm="12">
                                     <FormGroup>
-                                       <Label for="number">Expire Date</Label>
+                                       <Label for="number">
+                                          Expire Date&nbsp;
+                                          <strong className="text-danger">
+                                             *
+                                          </strong>
+                                       </Label>
                                        <Input
-                                          //required
+                                          required
                                           type="date"
                                           id="expireDate"
                                           placeholder="Expire Date"
@@ -445,7 +492,12 @@ class AddMedicine extends React.Component {
                                  </Col>
                                  <Col md="3" sm="12">
                                     <FormGroup>
-                                       <Label for="number">Quantity</Label>
+                                       <Label for="number">
+                                          Quantity &nbsp;
+                                          <strong className="text-danger">
+                                             *
+                                          </strong>
+                                       </Label>
                                        <Input
                                           required
                                           type="number"

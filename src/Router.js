@@ -20,8 +20,15 @@ const UpdateMedicine = lazy(() =>
 //Add Purchase
 const AddPurchase = lazy(() => import("./views/pages/Purchase/addPurchase"));
 
-//Add Purchase
+//Add sale
 const AddSale = lazy(() => import("./views/pages/Sale/addSale"));
+const SaleMedicine = lazy(() => import("./views/pages/Sale/saleMedicine"));
+const PrintSale = lazy(() => import("./views/pages/Sale/printSale"));
+const ShowSale = lazy(() => import("./views/pages/Sale/getSale"));
+
+const TempShowMedicine = lazy(() =>
+   import("./views/pages/Sale/tempShowMedicine")
+);
 
 // //Home Dashboard
 // import Home from "./views/pages/UserDashboard/Home";
@@ -66,6 +73,12 @@ class Routes extends Component {
                      path="/update/medicine"
                      component={UpdateMedicine}
                   />
+                  <PrivateRoute
+                     userInfo={this.props.userInfo}
+                     exact
+                     path="/show/sale/medicine"
+                     component={PrintSale}
+                  />
                   {/* For Purchase */}
                   <PrivateRoute
                      userInfo={this.props.userInfo}
@@ -79,6 +92,24 @@ class Routes extends Component {
                      exact
                      path="/add/sale"
                      component={AddSale}
+                  />
+                  <PrivateRoute
+                     userInfo={this.props.userInfo}
+                     exact
+                     path="/show/sale"
+                     component={ShowSale}
+                  />
+                  <PrivateRoute
+                     userInfo={this.props.userInfo}
+                     exact
+                     path="/sale/medicine"
+                     component={SaleMedicine}
+                  />
+                  <PrivateRoute
+                     userInfo={this.props.userInfo}
+                     exact
+                     path="/temp/show/medicine"
+                     component={TempShowMedicine}
                   />
                   {/* For Profile */}
                   <PrivateRoute
