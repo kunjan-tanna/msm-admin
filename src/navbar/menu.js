@@ -90,7 +90,7 @@ const Menu = (props) => {
                         </DropdownItem>
                      </DropdownMenu>
                   </UncontrolledDropdown>
-                  <UncontrolledDropdown nav inNavbar>
+                  {/* <UncontrolledDropdown nav inNavbar>
                      <DropdownToggle nav caret>
                         Search
                      </DropdownToggle>
@@ -110,7 +110,7 @@ const Menu = (props) => {
                            Supplier Sales Details
                         </DropdownItem>
                      </DropdownMenu>
-                  </UncontrolledDropdown>
+                  </UncontrolledDropdown> */}
                   <NavItem>
                      <NavLink
                         tag={RRNavLink}

@@ -24,7 +24,7 @@ const AddPurchase = lazy(() => import("./views/pages/Purchase/addPurchase"));
 const AddSale = lazy(() => import("./views/pages/Sale/addSale"));
 const SaleMedicine = lazy(() => import("./views/pages/Sale/saleMedicine"));
 const PrintSale = lazy(() => import("./views/pages/Sale/printSale"));
-const ShowSale = lazy(() => import("./views/pages/Sale/getSale"));
+const ShowSale = lazy(() => import("./views/pages/Sale/showSale"));
 
 const TempShowMedicine = lazy(() =>
    import("./views/pages/Sale/tempShowMedicine")

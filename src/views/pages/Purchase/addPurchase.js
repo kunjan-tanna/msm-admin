@@ -230,7 +230,7 @@ class AddPurchase extends React.Component {
                   position: toast.POSITION.BOTTOM_RIGHT,
                });
                setTimeout(() => {
-                  history.push("/show/purchase");
+                  history.push("/show/medicine");
                }, 3000);
             } else {
                toast.error("Add Purchase not Successfully", {
@@ -319,12 +319,12 @@ class AddPurchase extends React.Component {
                                                 "YYYY-MM-DD"
                                              )
                                                 ? moment(
-                                                     this.state.date
-                                                  ).format("YYYY-MM-DD")
+                                                   this.state.date
+                                                ).format("YYYY-MM-DD")
                                                 : ""
                                           }
                                           placeholder="PublishAt"
-                                          // onChange={this.handleInput}
+                                       // onChange={this.handleInput}
                                        />
                                     </FormGroup>
                                  </Col>
@@ -386,7 +386,7 @@ class AddPurchase extends React.Component {
                                           name="total"
                                           value={
                                              this.state.formData &&
-                                             this.state.totalStock
+                                                this.state.totalStock
                                                 ? this.state.totalStock
                                                 : ""
                                           }
@@ -428,7 +428,7 @@ class AddPurchase extends React.Component {
                                              name="discount"
                                              id="discount"
                                              placeholder="Discount"
-                                             //onChange={this.handleDiscount}
+                                          //onChange={this.handleDiscount}
                                           />
                                           <InputGroupAddon addonType="append">
                                              <InputGroupText>%</InputGroupText>
@@ -496,7 +496,7 @@ class AddPurchase extends React.Component {
                                        className="mr-1"
                                        color="primary"
                                        type="submit"
-                                       //onClick={this.props.leadId}
+                                    //onClick={this.props.leadId}
                                     >
                                        Add Purchase
                                     </Button>{" "}
